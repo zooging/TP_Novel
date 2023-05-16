@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 24: invalid syntax
+    Character ("Кто-то", = "#4ca6ff")
+                          ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Fri May  5 16:09:13 2023

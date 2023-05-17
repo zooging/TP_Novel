@@ -5,8 +5,8 @@ init python:
     q3_answer = 0
     q4_answer = 0
     myname = ""
-    onn = ImageDissolve("gui/eye.jpg", 2.0, 20, reverse=False)
-    off = ImageDissolve("gui/eye.jpg", 2.0, 20, reverse=True)
+    onn = ImageDissolve("gui/eyes.png", 2.0, 20, reverse=False)
+    off = ImageDissolve("gui/eyes.png", 2.0, 20, reverse=True)
 
 
 
@@ -127,12 +127,9 @@ label start:
 
         my "Ох, плыть всего неделю, но я уже устал… Неужели вся энергия в нашей семье передается только женщинам? Что мама, что бабушка,авантюристки. До отплытия еще пол часа, посплю пока"
 
-        scene bg_black with off
-
-        "Это была спокойная, но в то же время очень быстрая ночь.."
-
-        scene background_kauta
-        with fade
+        scene black with off
+        pause 1.0
+        scene background_kauta with onn
 
         my "Мы что? Уже плывем? Cколько же я спал..? Ну что ж…пойду на палубу, полюбуюсь видом"
 
@@ -281,4 +278,7 @@ label continue_story:
             with fade
 
             my "Не спиться, все не могу забыть историю якоба. На корабле много интересных людей, хорошо, что бабушка позвала меня в гости. Так поздно, за окном шумит море. Все, пора спать.."
-            # return
+            scene black with off
+            pause 1.0
+            scene background_kauta with onn
+            "Вы проснулись"

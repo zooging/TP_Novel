@@ -284,6 +284,7 @@ label continue_story:
             scene black with off
             pause 1.0
             scene background_kauta with onn
+<<<<<<< HEAD
 
             scene background_kauta
             with fade
@@ -492,3 +493,6 @@ label continue_story:
             scene black with off
             pause 1.0
             scene background_kauta with onn
+=======
+            "Вы проснулись"
+>>>>>>> 225ad09189e26b955ae36fcdafa8a901df61e838

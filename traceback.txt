@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 383, in script
-    singer "АРГХ, эта палуба! я споткнулся! кто вообще поставил здесь эту коробку, *пинает* ее надо ставить в угол!"
-Exception: Sayer 'singer' is not defined.
+  File "game/script.rpy", line 798, in script
+    bot "Нет, я помню тебя.."
+Exception: Sayer 'bot' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 383, in script
-    singer "АРГХ, эта палуба! я споткнулся! кто вообще поставил здесь эту коробку, *пинает* ее надо ставить в угол!"
+  File "game/script.rpy", line 798, in script
+    bot "Нет, я помню тебя.."
   File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
     who = eval_who(self.who, self.who_fast)
   File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
     raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'singer' is not defined.
+Exception: Sayer 'bot' is not defined.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 TP 1.0
-Thu May 18 15:57:15 2023
+Mon May 22 17:35:12 2023

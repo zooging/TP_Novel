@@ -1,36 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 83, in script
-    my "Вот и начинается мое маленькое путешествие. Давно я не видел свою бабулю. До сих пор не понимаю, как она решилась на старости лет переехать на отдельный остров, да еще и через залив."
-KeyError: 'myname '
+  File "game/script.rpy", line 798, in script
+    bot "Нет, я помню тебя.."
+Exception: Sayer 'bot' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 83, in script
-    my "Вот и начинается мое маленькое путешествие. Давно я не видел свою бабулю. До сих пор не понимаю, как она решилась на старости лет переехать на отдельный остров, да еще и через залив."
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\character.py", line 1251, in __call__
-    who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\character.py", line 1172, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\character.py", line 1152, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-KeyError: 'myname '
+  File "game/script.rpy", line 798, in script
+    bot "Нет, я помню тебя.."
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'bot' is not defined.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 TP 1.0
-Fri May  5 14:32:47 2023
+Mon May 22 17:35:12 2023

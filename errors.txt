@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 24: invalid syntax
-    Character ("Кто-то", = "#4ca6ff")
-                          ^
+File "game/script.rpy", line 54: expected '=' not found.
+    image room "gui/grand_room.jpg"
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri May  5 16:09:13 2023
+Mon May 22 17:12:12 2023

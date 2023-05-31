@@ -297,17 +297,17 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Начать") action Start()
+            textbutton _("Начать") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), Start()]
 
         else:
 
-            textbutton _("История") action ShowMenu("history")
+            textbutton _("История") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), ShowMenu("history")]
 
             textbutton _("Сохранить") action ShowMenu("save")
 
-        textbutton _("Загрузить") action ShowMenu("load")
+        textbutton _("Загрузить") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), ShowMenu("load")]
 
-        textbutton _("Настройки") action ShowMenu("preferences")
+        textbutton _("Настройки") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), ShowMenu("preferences")]
 
         if _in_replay:
 
@@ -315,14 +315,14 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Главное меню") action MainMenu()
+            textbutton _("Главное меню") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), MainMenu()]
 
-        textbutton _("Справка") action ShowMenu("about")
+        textbutton _("Справка") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), ShowMenu("about")]
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Помощь не необходима и не относится к мобильным устройствам.
-            textbutton _("Персонажи") action ShowMenu("help")
+            textbutton _("Персонажи") action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"), Hide("contact_info4"), ShowMenu("help")]
 
         if renpy.variant("pc"):
 
@@ -473,7 +473,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     textbutton _("Вернуться"):
         style "return_button"
 
-        action Return()
+        action  [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"),Return()]
 
     label title
 
@@ -542,7 +542,7 @@ style return_button:
 
 
 screen about():
-
+#color=#E0FFFF
     tag menu
 
     default device = "reference"
@@ -556,13 +556,170 @@ screen about():
 
         hbox:
 
-            textbutton _("Справка") action SetScreenVariable("device", "reference")
-            textbutton _("Почитать") action SetScreenVariable("device", "reed")
+            textbutton _("Справка") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "reference")]
+            textbutton _("Почитать") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "reed")]
+            textbutton _("Контакты") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "contacts")]
 
         if device == "reference":
             use reference()
         elif device == "reed":
             use reed()
+        elif device == "contacts":
+            use contacts()
+
+screen contacts():
+
+    tag menu
+    imagemap:
+        ground "gui/menu_reed.png"
+        idle "gui/menu_contacts_normal.png"
+        hover "gui/menu_contacts_hover.png"
+        #Высота +107
+
+        hotspot(28,57,466,65) action  NullAction()
+        hotspot(65,146,334,44) action [Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), Show("contact_info")]
+        hotspot(65,223,334,44) action [Hide("contact_info"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), Show("contact_info1")]
+        hotspot(65,300,334,44) action [Hide("contact_info"), Hide("contact_info1"), Hide("contact_info3"),Hide("contact_info4"), Show("contact_info2")]
+        hotspot(65,375,334,44) action [Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"),Hide("contact_info4"), Show("contact_info3")]
+        hotspot(65,450,334,44) action [Hide("contact_info"), Hide("contact_info1"), Hide("contact_info3"),Hide("contact_info2"), Show("contact_info4")]
+        hotspot(38,669,257,31) action [Hide("contact_info"), Hide("contact_info1"), Hide("contact_info3"),Hide("contact_info2"),Hide("contact_info4"), Return()]
+
+screen contact_info():
+        # Текст
+    vbox:
+        xsize 570
+        xalign 0.80 yalign 0.35
+        text ""
+        text " "
+        text " "
+        text " "
+        text "{size=-7}{b}Имя психолога:{/b} Александр Левин Никс"
+        vbox:
+            xsize 570
+            xalign 0.80 yalign 0.35
+            text " "
+            text "{size=-13}{b}Области консультирования:{/b}"
+            text "{size=-15}-Психотерапия и саморазвитие"
+            text "{size=-15}-Работа со стрессом и тревожностью"
+            text "{size=-15}-Решение проблем в отношениях"
+            text "{size=-15}-Поддержка при психологических расстройствах"
+            text "{size=-15}-Развитие личности и самооценка"
+            text "{size=-15}-Преодоление депрессии и эмоционального несбаланса"
+            text "{size=-13}{b}Контактные данные:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Телефон:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Время работы:{/b} Пн-Пт с 11:00 - 20:00"
+            text "{size=-13}{b}Электронная почта:{/b} psiholog@mail.ru"
+
+
+screen contact_info1():
+        # Текст
+    vbox:
+        xsize 570
+        xalign 0.80 yalign 0.35
+        text ""
+        text " "
+        text " "
+        text " "
+        text "{size=-7}{b}Имя психолога:{/b} Александр Задний Никс"
+        vbox:
+            xsize 570
+            xalign 0.80 yalign 0.35
+            text " "
+            text "{size=-13}{b}Области консультирования:{/b}"
+            text "{size=-15}-Психотерапия и саморазвитие"
+            text "{size=-15}-Работа со стрессом и тревожностью"
+            text "{size=-15}-Решение проблем в отношениях"
+            text "{size=-15}-Поддержка при психологических расстройствах"
+            text "{size=-15}-Развитие личности и самооценка"
+            text "{size=-15}-Преодоление депрессии и эмоционального несбаланса"
+            text "{size=-13}{b}Контактные данные:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Телефон:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Время работы:{/b} Пн-Пт с 11:00 - 20:00"
+            text "{size=-13}{b}Электронная почта:{/b} psiholog@mail.ru"
+
+screen contact_info2():
+        # Текст
+    vbox:
+        xsize 570
+        xalign 0.80 yalign 0.35
+        text ""
+        text " "
+        text " "
+        text " "
+        text "{size=-7}{b}Имя психолога:{/b} Александр Кривой Никс"
+        vbox:
+            xsize 570
+            xalign 0.80 yalign 0.35
+            text " "
+            text "{size=-13}{b}Области консультирования:{/b}"
+            text "{size=-15}-Психотерапия и саморазвитие"
+            text "{size=-15}-Работа со стрессом и тревожностью"
+            text "{size=-15}-Решение проблем в отношениях"
+            text "{size=-15}-Поддержка при психологических расстройствах"
+            text "{size=-15}-Развитие личности и самооценка"
+            text "{size=-15}-Преодоление депрессии и эмоционального несбаланса"
+            text "{size=-13}{b}Контактные данные:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Телефон:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Время работы:{/b} Пн-Пт с 11:00 - 20:00"
+            text "{size=-13}{b}Электронная почта:{/b} psiholog@mail.ru"
+
+
+screen contact_info3():
+        # Текст
+    vbox:
+        xsize 570
+        xalign 0.80 yalign 0.35
+        text ""
+        text " "
+        text " "
+        text " "
+        text "{size=-7}{b}Имя психолога:{/b} Александр Прямой Никс"
+        vbox:
+            xsize 570
+            xalign 0.80 yalign 0.35
+            text " "
+            text "{size=-13}{b}Области консультирования:{/b}"
+            text "{size=-15}-Психотерапия и саморазвитие"
+            text "{size=-15}-Работа со стрессом и тревожностью"
+            text "{size=-15}-Решение проблем в отношениях"
+            text "{size=-15}-Поддержка при психологических расстройствах"
+            text "{size=-15}-Развитие личности и самооценка"
+            text "{size=-15}-Преодоление депрессии и эмоционального несбаланса"
+            text "{size=-13}{b}Контактные данные:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Телефон:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Время работы:{/b} Пн-Пт с 11:00 - 20:00"
+            text "{size=-13}{b}Электронная почта:{/b} psiholog@mail.ru"
+
+
+screen contact_info4():
+        # Текст
+    vbox:
+        xsize 570
+        xalign 0.80 yalign 0.35
+        text ""
+        text " "
+        text " "
+        text " "
+        text "{size=-7}{b}Имя психолога:{/b} Александр Правин Никс"
+        vbox:
+            xsize 570
+            xalign 0.80 yalign 0.35
+            text " "
+            text "{size=-13}{b}Области консультирования:{/b}"
+            text "{size=-15}-Психотерапия и саморазвитие"
+            text "{size=-15}-Работа со стрессом и тревожностью"
+            text "{size=-15}-Решение проблем в отношениях"
+            text "{size=-15}-Поддержка при психологических расстройствах"
+            text "{size=-15}-Развитие личности и самооценка"
+            text "{size=-15}-Преодоление депрессии и эмоционального несбаланса"
+            text "{size=-13}{b}Контактные данные:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Телефон:{/b} 8 800 555 35 35"
+            text "{size=-13}{b}Время работы:{/b} Пн-Пт с 11:00 - 20:00"
+            text "{size=-13}{b}Электронная почта:{/b} psiholog@mail.ru"
+
+
+
+
 
 screen reed_info():
         # Текст
@@ -621,7 +778,6 @@ screen reed_info4():
         text "Как справиться с тревогой самостоятельно..."
         text " "
         text "{size=-15}Для справления с приближением приступа тревожности, можно использовать несколько методов дома. Попробуйте расслабиться и выполнить несколько дыхательных упражнений. Войдите в ресурсное состояние, ощущайте свою силу и находите источники радости. Представьте свое тело и определите место, где находится тревога, затем нарисуйте свое чувство и порвите рисунок. Пересмотрите график работы, выделяйте время на отдых, правильное питание, и оградитесь от негативной информации. Не стоит всегда ожидать худшего, нужно остановить негативные мысли и переосмыслить их. Важно понимать, что нельзя полностью контролировать все происходящее вокруг и доверять окружающим людям."
-
 
 
 
@@ -1089,6 +1245,21 @@ screen character3():
         text " "
         text "{size=-13}Оперный певец. Едет на лечение по совету врача. Испытывает раздражительность, нарушение сна и проблему с концентрацией. Боится потерять свое место и популярность, сорвать голос, стать не столь привлекательным. Не видит себя никем,кроме как певцом, никто и ничто не интересует. Стал забывать текст опер, за что был отправлен к врачу, одно время был зависим от снотворного, иначе просто не мог спать. Ему дали отдых, он из-за этого очень переживает, но чем дольше плывет, тем его самочувствие улучшается из-за смены графика, места и еды."
 
+screen character4():
+    # Картинка
+
+    add "gui/pchel5.png" xpos 0.33 yalign 0.14 xsize 580 ysize 650
+
+        # Текст
+    vbox:
+        xsize 370
+        xalign 0.07 yalign 0.25
+        text ""
+        text " "
+        text "Домосед- Леон Джо Симпл"
+        text " "
+        text "{size=-13}Худощавый молодой человек с длинными волосами, редко выходит на улицу, тяжело общается с другими, раньше жил в другом месте с семьей, но родители решили развестись и отправили его в деревню к бабушке, пессимистичен, считает себя странным."
+
 screen help():
 
     tag menu
@@ -1099,12 +1270,12 @@ screen help():
         hover "gui/menu_hover.png"
         #Высота +107
 
-        hotspot(1436,211,353,78) action [Hide("character2"), Hide("character3"), Show("character")]
-        hotspot(1436,318,353,78) action [Hide("character"), Hide("character3"), Show("character2")]
-        hotspot(1436,425,353,78) action [Hide("character2"), Hide("character"), Show("character3")]
-        hotspot(54,1007,403,55) action [Hide("character2"), Hide("character"), Hide("character3"),Return()]
+        hotspot(1436,211,353,78) action [Hide("character2"), Hide("character3"), Hide("character4"), Show("character")]
+        hotspot(1436,318,353,78) action [Hide("character"), Hide("character3"), Hide("character4"), Show("character2")]
+        hotspot(1436,425,353,78) action [Hide("character2"), Hide("character"), Hide("character4"), Show("character3")]
+        hotspot(1436,532,353,78) action [Hide("character"), Hide("character2"), Hide("character3"), Show("character4")]
+        hotspot(54,1007,403,55) action [Hide("character2"), Hide("character"), Hide("character3"), Hide("character4"), Return()]
         hotspot(67,83,409,91) action NullAction()
-        #hotspot(1436,532,353,78) action [Hide("character", "character2", "character3"), Show("character4")]
 
 
 style help_button is gui_button

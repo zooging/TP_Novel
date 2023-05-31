@@ -2,18 +2,8 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/script.rpy", line 130: expected 'image_name_component' not found.
-    scene "eyes.jpg"
-          ^
+File "game/screens.rpy", line 1276: is not terminated with a newline. (Check strings and parenthesis.)
+            hotspot(1436,532,353,78) action [Hide("character", Hide("character2"), Hide("character3"), Show("character4")]
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue May 16 22:44:31 2023
-=======
-File "game/script.rpy", line 54: expected '=' not found.
-    image room "gui/grand_room.jpg"
-               ^
-
-Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon May 22 17:12:12 2023
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
+Wed May 31 23:50:34 2023

@@ -33,12 +33,12 @@ define gui.idle_color = '#0b0d0c'
 define gui.idle_small_color = '#888888'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = '#cc6600'
+define gui.hover_color = '#B0C4DE'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
 ## настройки.
-define gui.selected_color = '#555555'
+define gui.selected_color = '#E0FFFF'
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
 define gui.insensitive_color = '#aaaaaa7f'

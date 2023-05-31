@@ -1,41 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-<<<<<<< HEAD
-  File "game/script.rpy", line 383, in script
-    singer "АРГХ, эта палуба! я споткнулся! кто вообще поставил здесь эту коробку, *пинает* ее надо ставить в угол!"
-Exception: Sayer 'singer' is not defined.
-=======
-  File "game/script.rpy", line 798, in script
-    bot "Нет, я помню тебя.."
-Exception: Sayer 'bot' is not defined.
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
+  File "renpy/common/00start.rpy", line 215, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 517, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 517, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 528, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-<<<<<<< HEAD
-  File "game/script.rpy", line 383, in script
-    singer "АРГХ, эта палуба! я споткнулся! кто вообще поставил здесь эту коробку, *пинает* ее надо ставить в угол!"
-=======
-  File "game/script.rpy", line 798, in script
-    bot "Нет, я помню тебя.."
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-<<<<<<< HEAD
-Exception: Sayer 'singer' is not defined.
-=======
-Exception: Sayer 'bot' is not defined.
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
+  File "renpy/common/00start.rpy", line 215, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 517, in script
+    python hide:
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 517, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 528, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\loadsave.py", line 769, in load
+    log.unfreeze(roots, label="_after_load")
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\rollback.py", line 1078, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\rollback.py", line 889, in rollback
+    self.load_failed()
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\rollback.py", line 807, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 TP 1.0
-<<<<<<< HEAD
-Thu May 18 15:57:15 2023
-=======
-Mon May 22 17:35:12 2023
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
+Thu Jun  1 00:17:02 2023

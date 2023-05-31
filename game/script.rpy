@@ -16,14 +16,11 @@ image younger = "gui/pchel.png"
 image actor = "gui/pchel2.png"
 image singer = "gui/pchel3.png"
 image whoho = "gui/pchel4.png"
-<<<<<<< HEAD
-=======
 image grandma = "gui/grandma.png"
 image Nadya = "gui/Nadya.png"
 image group = "gui/group.png"
 image pchel5 = "gui/pchel5.png"
 image pchel6 = "gui/pchel6.png"
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
 
 
 define actorc = Character("Якоб Хенц",color ="#4ca6ff")
@@ -32,13 +29,10 @@ define sing = Character ("Андреа Каррерас", color = "#4ca6ff")
 define my = Character("[myname]")
 define someone = Character ("Кто-то",color = "#aaaa")
 define who = Character ("Незнакомец", color= "#aaaa")
-<<<<<<< HEAD
-=======
 define grandmom = Character ("Бабуля", color = "#aaaa" )
 define Nadyuha = Character ("Баба Надя", color = "#aaaa")
 define groups = Character ("Компания", color = "#aaaa")
 define boy = Character ("Леон", color = "#aaaa")
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
 
 
 
@@ -63,7 +57,6 @@ image ploshad = "gui/ploshad.jpg"
 image boy_nextdoor = "gui/boy_nextdoor.jpg"
 image house = "gui/house.jpg"
 image boy_room = "gui/boy_room.jpg"
-image sun = "gui/sun.jpg"  
 
 
 label start:
@@ -314,11 +307,6 @@ label continue_story:
             scene black with off
             pause 1.0
             scene background_kauta with onn
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983
             scene background_kauta
             with fade
 
@@ -526,11 +514,6 @@ label continue_story:
             scene black with off
             pause 1.0
             scene background_kauta with onn
-<<<<<<< HEAD
-=======
-            "Вы проснулись"
->>>>>>> 225ad09189e26b955ae36fcdafa8a901df61e838
-=======
             scene background_kauta
             with fade
 
@@ -1145,72 +1128,3 @@ label continue_story:
             scene black with off
             pause 1.0
             scene room with onn
-
-             # картинка комната гг
-            scene black with off
-            pause 1.0
-            scene room  with onn
-            scene room
-            with fade
-
-            my "ну вот и все, пора собирать вещи, дома меня еще ждут дела. Надо маму навестить и отца."
-            my "Леона забрала мама, его родители оформили совместную опеку, ему очень непривычно и он волнуется, но думаю, что все будет хорошо, последнюю свою неделю он активно помогал бабушке и ходил гулять с той компанией с фестиваля, они даже собрались писать друг другу письма."
-            my "Я рад за него."
-
-            show grandma
-            grandmom "Внуучеееек, иди кушать, блинчики готовы"
-
-            my "Уже иду, бабуль"
-            hide grandma
-
-            scene embankment
-            with fade
-
-            show grandma
-
-            grandmom "Ты приезжай еще, не забывай меня"
-            my "Ну конечно, бабуль, я как вернусь, сразу отправлю тебе письмо"
-            grandmom "ну хорошо,хорошо, вот тебе судочек с собой. Там пирожки и манник, скушаешь с чаeм"
-            my "Cпасибо, бабул"
-            grandmom "Hу все беги, пока не опоздал"
-            my "Увидимся"
-            grandmom "Пока"
-
-            hide grandma
-
-            scene background_ship
-            with fade
-
-            show younger
-
-            young "Позвольте ваш багаж, сэр"
-            my "О, Ян"
-            young "Да, здравствуйте, а я думал, не узнаете"
-            my "Как я мог тебя не узнать? Как у тебя дела?"
-            young "Да хорошо все. Расскажу вам потом наши приключения за обедом"
-            my "Давай, буду ждать"
-
-            hide younger
-
-            show actor
-
-            actorc "О, сердечный мой друг, это вы?"
-            my "Да, якоб, я ,а что ж вы так рано обратно?"
-            actorc "Я дописал ее! я закончил книгу! Хочу теперь ее выпустить в тираж, вот и плыву домой"
-            my "О,я так рад за вас, могу почитать?"
-            actorc "Я отправлю вам один экземплярчик, дорогой мой друг, сами понимаете, она очень ценна для меня, так что оригинал я положил в специальный сейф"
-            my "Да, конечно, сейф ей в самый раз"
-            actorc "Да. Это же мое сокровище. Слышали про певца?"
-            my "Про андреа? Что слышал?"
-            actorc "Он решил еще немного продлить себе отдых, а вместе с этим пишет новую песню"
-            my "O, это очень хорошо"
-            actorc "Я полностью с вами солидарен, пойдемте ж быстрее в каюту, я расскажу вам преудивительную историю, ее мне поведал один торговец на рынке"
-
-            scene sun
-            with fade
-            "Жизнь течет своим чередом, так спокойно и приятно, а какой закат над морем, красота"
-            scene black with off
-            pause 1.0
-
-            "Конец"
->>>>>>> ba4822de954c922152080cc8e0b172db20e44983

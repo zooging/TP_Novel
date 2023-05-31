@@ -559,6 +559,7 @@ screen about():
             textbutton _("Справка") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "reference")]
             textbutton _("Почитать") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "reed")]
             textbutton _("Контакты") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "contacts")]
+            textbutton _("Ресурсы") action [Hide("reed_info"),Hide("reed_info1"), Hide("reed_info2"), Hide("reed_info3"),Hide("reed_info4"), Hide("contact_info"), Hide("contact_info1"), Hide("contact_info2"), Hide("contact_info3"),Hide("contact_info4"), SetScreenVariable("device", "sources")]
 
         if device == "reference":
             use reference()
@@ -566,6 +567,8 @@ screen about():
             use reed()
         elif device == "contacts":
             use contacts()
+        elif device == "sources":
+            use sources()
 
 screen contacts():
 
@@ -804,8 +807,34 @@ screen reed():
 screen reference():
 
     vbox:
-
+        text " "
         text "[gui.about!t]\n"
+
+screen sources():
+
+    vbox:
+        text " "
+        text "[gui.sources!t]\n"
+        text "{size=-10}{color=#000000}Вот некоторые ресурсы психологической помощи, к которым вы можете обратиться:{/color=#000000}"
+        vbox:
+            xsize 1400
+            xalign 0.06 yalign 0.35
+            text "{size=-13}{color=#000000}•Мета — сервис подбора проверенных психотерапевтов - {a=https://bemeta.co}{color=#DCDCDC}ссылка на сайт{/color=#DCDCDC}{/a}{/color=#000000}"
+            text "{size=-13}{color=#000000}•Первый бесплатный бот-психолог Zigmund.GPT - {a=https://zigmund.online}{color=#DCDCDC}ссылка на бота{/color=#DCDCDC}{/a}{/color=#000000}"
+            text "{size=-13}{color=#000000}•Alter — сервис подбора психологов на основе научного алгоритма, разработанного на базе Психологического института РАО* - {color=#000000}{a=https://alter.ru}{color=#DCDCDC}ссылка на сайт{/color=#DCDCDC}{/a}{/color=#000000}"
+        text " "
+        text "{size=-10}{color=#000000}К тому же, вы можете обратиться к известным книгам в области психологии и самопомощи, вот некоторые из них:{/color=#000000}"
+        vbox:
+            xsize 1400
+            xalign 0.06 yalign 0.35
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Мозг и психоанализ'{/color=#DCDCDC} - Оливер Сакс{/color=#000000}"
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Взлом мозга: искусство изменять свое сознание'{/color=#DCDCDC} - Джон К. Лилли{/color=#000000}"
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Поток: психология оптимального переживания'{/color=#DCDCDC} - Михай Чиксентмихайи{/color=#000000}"
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Управление эмоциями: как справиться со стрессом, гневом, тревогой и депрессией'{/color=#DCDCDC} - Големан Дэниел{/color=#000000}"
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Об искусстве любить'{/color=#DCDCDC} - Эрих Фромм{/color=#000000}"
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Мир, осознанный: наука и духовность пробуждения'{/color=#DCDCDC} - Джеймс Х. Остин{/color=#000000}"
+            text "{size=-13}{color=#000000}•{color=#DCDCDC}'Сила подсознания: как использовать скрытые возможности вашего разума'{/color=#DCDCDC} - Джозеф Мерфи{/color=#000000}"
+
 
 
 style about_label is gui_label

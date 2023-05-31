@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1276: is not terminated with a newline. (Check strings and parenthesis.)
-            hotspot(1436,532,353,78) action [Hide("character", Hide("character2"), Hide("character3"), Show("character4")]
+File "game/options.rpy", line 43: is not terminated with a newline. (Check strings and parenthesis.)
+    define gui.sources = _p("""{size=-10}{color=#000000}Психологическая помощь может быть важным шагом на пути к вашему благополучию. Если вам требуется консультация или поддержка в различных психологических областях, вы можете обратиться к нашему опытному психологу.{/color=#000000} """
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed May 31 23:50:34 2023
+Thu Jun  1 00:57:16 2023
